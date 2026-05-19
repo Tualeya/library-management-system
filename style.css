@@ -1,52 +1,109 @@
+/* Core Layout Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-
-    font-family: Arial;
-    background-color: #f0f0f0;
+    background-color: #f4f6f9;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Base Structural Container Layout */
 .container {
-
-    width: 450px;
-    margin: auto;
-    margin-top: 60px;
-    background: white;
+    background: #ffffff;
     padding: 30px;
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
 }
 
-input {
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
 
-    width: 90%;
+h2 {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Element Wrapper Groups */
+.form-wrapper, .form-group, .search-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
     padding: 10px;
-    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #3498db;
+    outline: none;
 }
 
 button {
-
-    padding: 10px 20px;
-    background: blue;
-    color: white;
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 12px;
     border: none;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    margin: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s;
 }
 
 button:hover {
-
-    background: darkblue;
+    background-color: #2980b9;
 }
 
-ul {
+#logoutBtn {
+    background-color: #e74c3c;
+    width: 100%;
+    margin-top: 15px;
+}
 
+#logoutBtn:hover {
+    background-color: #c0392b;
+}
+
+/* Dynamic Item Render Container Rules */
+#bookList {
     list-style: none;
-    padding: 0;
+    margin-top: 15px;
+    max-height: 250px;
+    overflow-y: auto;
 }
 
-li {
-
-    background: #dddddd;
-    margin: 10px;
+#bookList li {
+    background: #fdfdfd;
     padding: 15px;
-    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    border-left: 5px solid #3498db;
+}
+
+#bookList button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    margin-top: 5px;
 }
